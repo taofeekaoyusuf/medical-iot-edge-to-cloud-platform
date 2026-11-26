@@ -2,9 +2,9 @@
 
 ## Approval and scope
 
-The user approved Stage 2 documentation including both local and future cloud architecture. This does not approve application code, dependency installation, container deployment, cloud resources or Stage 3. Each later stage requires a concrete action summary and explicit permission before execution. Stage 1 environment/repository work is complete.
+The user approved Stage 2 documentation including both local and future cloud architecture. The user subsequently approved Stage 3: the Python foundation, shared event validation and a bounded local MQTT test harness. Cloud resources and Stage 4 onward remain unapproved. Each later stage requires a concrete action summary and explicit permission before execution. Stage 1 environment/repository work is complete.
 
-The [task checklist](todo.md) holds implementation tasks; all remain unchecked. Technical specifications live under [docs](../README.md). Defaults and SLOs are proposals, not measured capabilities.
+The [task checklist](todo.md) holds implementation tasks; T01–T03 are complete with evidence; subsequent tasks remain unchecked. Technical specifications live under [docs](../README.md). Defaults and SLOs are proposals, not measured capabilities.
 
 ## Intended stages, reasons and tools
 
@@ -12,7 +12,7 @@ The [task checklist](todo.md) holds implementation tasks; all remain unchecked. 
 |---|---|---|---|
 | 1 | Establish correct folder, public repositories and local tools so work is reproducible | Git/GitHub, Homebrew, Docker; completed setup | Completed |
 | 2 | Define boundaries, contracts, risks and tests before coding | Markdown, Mermaid, official documentation, ADRs | Authorized documentation only |
-| 3 | Establish reproducible Python/service structure and an MQTT-client feasibility spike to expose scaling risks early | uv, Python, FastAPI, Pydantic, Paho candidate, pytest, Ruff; T01–T03 | Await permission |
+| 3 | Establish reproducible Python/service structure and an MQTT-client feasibility spike to expose scaling risks early | uv, Python, FastAPI, Pydantic, Paho, pytest, Ruff; T01–T03 | Completed locally; see evidence |
 | 4 | Create identity and certificate lifecycle so devices can be isolated and disabled | PostgreSQL, Alembic, local CA, Mosquitto ACLs; T04–T05 | Await permission |
 | 5 | Build deterministic simulator and spool so tests can reproduce loss/reconnect cases | Python async event loop, seeded scenarios, local disk spool; T06–T07 | Await permission |
 | 6 | Connect validated MQTT ingress to bounded asynchronous work | Gateway, Mosquitto, Redis Streams; T08 | Await permission |

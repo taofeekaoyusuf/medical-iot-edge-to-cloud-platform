@@ -1,6 +1,6 @@
 # Acceptance criteria and evidence plan
 
-All runtime items below are **proposed and untested**. These are targets to review before implementation, not claims that this machine can meet them. Any target change must be documented with evidence and approved, not silently weakened.
+The runtime targets below remain **proposed**. Stage 3 has limited contract and MQTT feasibility evidence, as described in the verification status; full platform acceptance is not yet demonstrated. These are targets to review before implementation, not claims that this machine can meet them. Any target change must be documented with evidence and approved, not silently weakened.
 
 ## Stage 2 completion
 
@@ -55,4 +55,4 @@ Before deployment approval: choose provider, region, queue durability, broker av
 
 ## Verification status
 
-Stage 2 supplies documentation only. All AC-01 through AC-18 and cloud runtime gates remain NOT RUN. Static review checks are recorded in [tasks/todo.md](../tasks/todo.md); implementation task completion must include actual evidence.
+Stage 3 adds executable contract tests supporting part of AC-02, and small plaintext MQTT replay/connection experiments. These do not complete any full-platform AC-01 through AC-18 gate. Cloud runtime gates remain NOT RUN. Review [MQTT evidence](evidence/mqtt-feasibility.md) and [tasks/todo.md](../tasks/todo.md) for the precise completed scope.

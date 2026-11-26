@@ -1,13 +1,15 @@
 # Medical IoT edge-to-cloud platform
 
-A proposed Python platform for 25,000–50,000 simulated infusion pumps, with authenticated MQTT ingestion, asynchronous processing, device health, operational notifications, and an authorized API. All device data is synthetic; the project does not control real equipment or contain patient information.
+A staged Python platform for 25,000–50,000 simulated infusion pumps, with authenticated MQTT ingestion, asynchronous processing, device health, operational notifications, and an authorized API. All device data is synthetic; the project does not control real equipment or contain patient information.
 
-**Status: Stage 2 design documentation. There is no runnable application yet.** Local implementation is the primary path. Cloud architecture is documented for a future decision; cloud code, accounts, provisioning, costs, and deployment are not authorized by this stage.
+**Status: Stage 3 foundations implemented.** Python service scaffolds, strict telemetry validation and a bounded MQTT feasibility harness are runnable; domain services are not implemented yet. Local implementation is the primary path. Cloud architecture is documented for a future decision; cloud code, accounts, provisioning, costs, and deployment are not authorized by this stage.
 
 ## Read the design
 
 | Document | What it explains |
 |---|---|
+| [Local development](docs/development.md) | Setup, checks, service scaffolds and MQTT experiment |
+| [MQTT evidence](docs/evidence/mqtt-feasibility.md) | Measured 10/100/1,000-client results and limits |
 | [Implementation plan](tasks/plan.md) | Stages, tools, reasons, dependencies, and approval gates |
 | [Task checklist](tasks/todo.md) | Small implementation tasks and verification requirements |
 | [Local architecture](docs/architecture/local.md) | Services, trust boundaries, Compose and local Kubernetes |
@@ -23,6 +25,17 @@ A proposed Python platform for 25,000–50,000 simulated infusion pumps, with au
 
 ## Getting started
 
-There are no install, run, migration, test, or deployment commands for the platform yet. Those will be added only in their approved implementation stages. Read the plan first; do not infer working features from the diagrams or examples.
+Install the locked development environment and run the local checks:
 
-The repository is public under [taofeekaoyusuf](https://github.com/taofeekaoyusuf/medical-iot-edge-to-cloud-platform), and is linked from [MyPortfolioProjects](https://github.com/taofeekaoyusuf/MyPortfolioProjects) as a submodule. See [AGENTS.md](AGENTS.md) for project rules. Stage 3 and later stages require new permission.
+```sh
+uv sync --locked
+make lint
+make test-unit
+make broker-up
+make test
+make broker-down
+```
+
+See [development](docs/development.md) for prerequisites, scaffold startup and experiment commands. The broker harness is deliberately loopback-only and has no device TLS/ACLs yet. Architecture diagrams describe the eventual platform, not completed capabilities.
+
+The repository is public under [taofeekaoyusuf](https://github.com/taofeekaoyusuf/medical-iot-edge-to-cloud-platform), and is linked from [MyPortfolioProjects](https://github.com/taofeekaoyusuf/MyPortfolioProjects) as a submodule. See [AGENTS.md](AGENTS.md) for project rules. Stage 4 and later stages require new permission.

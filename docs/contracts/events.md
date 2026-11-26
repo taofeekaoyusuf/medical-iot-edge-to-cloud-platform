@@ -1,6 +1,6 @@
 # MQTT and event contracts — proposed version 1
 
-These are documentation contracts and examples, not executable JSON Schema files. Versioned schemas and validation code will be created in a later approved stage.
+Stage 3 implements the four telemetry event types in `src/medical_iot/contracts/events.py`. Status and receipt contracts remain documentation for later stages; no standalone JSON Schema files are published. See [development](../development.md) for validation entry points and limits.
 
 ## Transport topics and permissions
 

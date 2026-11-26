@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-11-26T21:30:11.806427+00:00",
+  "transport": "plaintext-loopback",
+  "python_version": "3.14.7",
+  "paho_version": "2.2.0",
+  "architecture": "arm64",
+  "configured_clients": 100,
+  "connected_clients": 100,
+  "broker_connected_clients": 101,
+  "observer_connections": 1,
+  "rounds": 3,
+  "verified_deliveries": 300,
+  "connect_seconds": 1.5816,
+  "measurement_seconds": 0.0427,
+  "verified_deliveries_per_second": 7021.7,
+  "roundtrip_p95_seconds": 0.012844,
+  "sampled_peak_rss_bytes": 33456128,
+  "baseline_threads": 1,
+  "sampled_peak_threads": 1,
+  "new_threads": 0,
+  "process_cpu_seconds": 0.2151,
+  "limitations": "Short plaintext self-echo bursts; no TLS, database, HA or sustained-load claim"
+}

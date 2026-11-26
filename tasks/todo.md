@@ -1,6 +1,6 @@
 # Implementation checklist
 
-Stage 2 is documentation only. All implementation tasks below are pending and require their stage approval. Paths are proposed, not existing files. Split a task further before execution if it grows beyond roughly five files.
+Stage 2 documentation and Stage 3 (T01–T03) are complete. Later implementation tasks require stage approval. Paths below were illustrative; actual Stage 3 modules use `src/medical_iot/` and `experiments/`. T03 was split into acknowledgement-adapter and resource-profile slices.
 
 ## Stage 2 documentation review
 
@@ -10,7 +10,7 @@ Stage 2 is documentation only. All implementation tasks below are pending and re
 
 ## T01: Reproducible Python foundation
 
-- [ ] Implement after permission.
+- [x] Implemented and verified in Stage 3.
 
 **Reason:** Provide a locked environment and consistent checks before services diverge.
 
@@ -24,7 +24,7 @@ Stage 2 is documentation only. All implementation tasks below are pending and re
 
 ## T02: Shared event validation
 
-- [ ] Implement after permission.
+- [x] Implemented and verified in Stage 3.
 
 **Reason:** Make one contract authoritative across producers and consumers.
 
@@ -38,7 +38,7 @@ Stage 2 is documentation only. All implementation tasks below are pending and re
 
 ## T03: MQTT feasibility spike
 
-- [ ] Implement after permission.
+- [x] Implemented and verified in Stage 3.
 
 **Reason:** Verify external-loop clients and deferred ACK before adopting a high-scale client.
 
@@ -366,3 +366,9 @@ Stage 2 is documentation only. All implementation tasks below are pending and re
 ## Stage 2 verification record
 
 Checked 16 project Markdown files for local-link targets and balanced code fences; parsed both JSON examples. Reviewed all original requirements against local/cloud designs and AC-01 through AC-18. Reviewed the separate status path, broker/Redis durability gaps, commit receipts, bounded spools and partition-independent deduplication. Git whitespace validation passed. Changed project files are Markdown only. Mermaid diagrams received source review; no graphical renderer was run. No runtime acceptance test was run because implementation is not part of Stage 2.
+
+## Stage 3 verification record
+
+Foundation: initial eight failing tests, then eight passing tests and a successful wheel/sdist build. Event contracts: initial 67 failing cases, then 67 passing cases. MQTT: initial two failing replay tests and eleven failing limit/profile cases; all subsequently passed against the isolated broker. Full suite: 88 passed (no skips). A fresh non-editable install in a separate environment also passed all 88 tests with an unchanged uv.lock. Ruff lint/format checks and wheel/sdist build passed. The temporary test broker and its network were removed after verification. No test is skipped in the full suite.
+
+See [development](../docs/development.md) and [MQTT evidence](../docs/evidence/mqtt-feasibility.md). Source spooling, persisted deduplication and authenticated device identities are not implemented by these feasibility tests.
