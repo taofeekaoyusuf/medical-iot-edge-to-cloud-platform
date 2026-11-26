@@ -2,6 +2,6 @@
 
 Local-only simulated medical-device platform. Stage 1 environment and repository setup only; Stage 2 requires explicit approval.
 
-Part of [MyPortfolioProjects](https://github.com/TaofeekAO/MyPortfolioProjects).
+Part of [MyPortfolioProjects](https://github.com/taofeekaoyusuf/MyPortfolioProjects).
 
 See AGENTS.md for contribution instructions. The initial setup branch is `chore/bootstrap`.
