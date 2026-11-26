@@ -13,3 +13,8 @@ __pycache__/
 node_modules/
 dist/
 coverage/
+
+# Local experiments and build artifacts
+artifacts/
+*.egg-info/
+.coverage
